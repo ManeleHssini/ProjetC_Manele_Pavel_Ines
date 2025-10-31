@@ -2,16 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
-
-// ===============================
-// Structure BigBinary
-// ===============================
-// Représentation d’un grand entier binaire
-typedef struct {
-    int *Tdigits;  // Tableau dynamique contenant les bits (0 ou 1)
-    int Taille;    // Nombre de bits significatifs
-    int Signe;     // +1 si positif, -1 si négatif, 0 si nul
-} BigBinary;
+#include "bigbinary.h"
 
 // ===============================
 // 1. Fonction d'initialisation vide
@@ -285,39 +276,3 @@ int Inferieur(const BigBinary *A, const BigBinary *B) {
     return 0;
 }
 
-
-int main() {
-    // Tests d'initialisation
-    BigBinary a = initBigBinaryDepuisChaine("1010"); // 10
-    BigBinary b = initBigBinaryDepuisChaine("0011"); // 3
-
-    printf("a = "); afficheBigBinary(a);
-    printf("b = "); afficheBigBinary(b);
-
-    // Addition
-    BigBinary s = additionBigBinary(&a, &b);
-    printf("a + b = ");
-    afficheBigBinary(s);
-
-    // Soustraction
-    BigBinary d = soustractionBigBinary(&a, &b);
-    printf("a - b = ");
-    afficheBigBinary(d);
-
-    // Division par 2
-    printf("a / 2 = ");
-    divisePar2(&a);
-    afficheBigBinary(a);
-
-    // Comparaisons
-    printf("a == b ? %d\n", Egal(&a, &b));
-    printf("a < b ? %d\n", Inferieur(&a, &b));
-
-    // Libération mémoire
-    libereBigBinary(&a);
-    libereBigBinary(&b);
-    libereBigBinary(&s);
-    libereBigBinary(&d);
-
-    return 0;
-}
