@@ -22,3 +22,13 @@ int Egal(const BigBinary *A, const BigBinary *B);
 int Inferieur(const BigBinary *A, const BigBinary *B);
 
 #endif // BIGBINARY_H
+
+// ===== PHASE 2 =====
+int estPair(const BigBinary *A);
+BigBinary copieBigBinary(const BigBinary *A);
+BigBinary multiplyBy2(const BigBinary *A);
+BigBinary BigBinary_PGCD(BigBinary A, BigBinary B);
+BigBinary BigBinary_mod(BigBinary A, BigBinary B);
+BigBinary BigBinary_multiply(const BigBinary *A, const BigBinary *B);
+BigBinary BigBinary_multiplyEgypt(const BigBinary *A, const BigBinary *B);
+BigBinary BigBinary_expMod(BigBinary M, int exp, BigBinary mod);
