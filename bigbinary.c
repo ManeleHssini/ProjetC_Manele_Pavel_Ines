@@ -108,7 +108,7 @@ void divisePar2(BigBinary *nb) {
 
 
 // ===============================================
-// Fonction : libereBigBinary
+// Fonction : libération de la mémoire 
 // But : Libérer la mémoire réservée pour un BigBinary
 // ===============================================
 void libereBigBinary(BigBinary *nb) {
